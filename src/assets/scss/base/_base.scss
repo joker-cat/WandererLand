@@ -1,0 +1,25 @@
+html,
+body {
+  font-family: 'Noto Sans TC', sans-serif;
+  color: $default;
+  scroll-behavior:smooth;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+@font-face {
+  font-family: 'Noto Sans TC';
+  src: url('../../../../public/fonts/NotoSansTC-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Noto Sans TC';
+  src: url('../../../../public/fonts/NotoSansTC-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}

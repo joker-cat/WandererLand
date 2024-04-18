@@ -1,0 +1,221 @@
+//Generate utilites for Font Size
+$utilities: map-merge(
+  $utilities,
+  (
+    'font-size':
+      map-merge(
+        map-get($utilities, 'font-size'),
+        (
+          responsive: true
+        )
+      )
+  )
+);
+
+//Generate utilites for Width
+$utilities: map-merge(
+  $utilities,
+  (
+    'width':
+      map-merge(
+        map-get($utilities, 'width'),
+        (
+          responsive: true,
+          values:
+            map-merge(
+              map-get(map-get($utilities, 'width'), 'values'),
+              (
+                15: 15%,
+                80: 80%
+              )
+            )
+        )
+      )
+  )
+);
+
+//Generate utilites for Height
+$utilities: map-merge(
+  $utilities,
+  (
+    'height':
+      map-merge(
+        map-get($utilities, 'height'),
+        (
+          responsive: true
+        )
+      )
+  )
+);
+
+//Generate utilites for Line Height
+$utilities: map-merge(
+  $utilities,
+  (
+    'line-height':
+      map-merge(
+        map-get($utilities, 'line-height'),
+        (
+          responsive: true
+        )
+      )
+  )
+);
+
+//Generate utilites for Position
+$utilities: map-merge(
+  $utilities,
+  (
+    'position':
+      map-merge(
+        map-get($utilities, 'position'),
+        (
+          responsive: true
+        )
+      )
+  )
+);
+
+// 暗色 navlink
+.theme-dark-navlink {
+  transition: background-color 0.3s;
+
+  &:hover {
+    color: white;
+    background-color: gray;
+  }
+}
+
+.theme-dark-navlink-active {
+  color: black !important ;
+  font-weight: bold;
+  background-color: white;
+}
+
+// 底線 navlink
+.navlink-underline {
+  position: relative;
+  transition: 0.3s ease-in-out;
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    border-bottom: 3px solid transparent;
+  }
+
+  &:hover::after {
+    border-bottom-color: $info;
+  }
+}
+
+.navlink-underline-active::after {
+  border-bottom-color: $default;
+}
+
+// 比例
+.ratio-1x1 {
+  aspect-ratio: 1 / 1;
+}
+
+// 背景圖片
+.bg-img-contain {
+  background-size: contain;
+}
+
+.bg-img-cover {
+  background-size: cover;
+}
+
+.bg-img-center {
+  background-position: center;
+}
+
+.bg-img-norepeat {
+  background-repeat: no-repeat;
+}
+
+// 連結互動
+.link-hover-decoration:hover {
+  text-decoration: underline;
+}
+
+.link-hover-bg:hover {
+  background-color: $light;
+}
+
+.link-hover-text-info:hover {
+  color: $info;
+}
+
+.link-hover-scale-grow {
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+// 文字
+//文字單行省略
+.single-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+//文字雙行省略
+.doubleline-ellipsis {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+//文字三行省略
+.threeline-ellipsis {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+// 白色標題 shadow
+.title-shadow {
+  text-shadow: 2px 2px 4px rgba(51, 51, 51, 0.7);
+}
+
+// 標題字距
+.title-letter-spacing {
+  letter-spacing: 2px;
+}
+
+// 標題文字換行
+.title-letter-word-wrap {
+  word-wrap: break-word;
+  white-space: pre-line;
+}
+
+// 高度
+.dvh-100 {
+  height: 100dvh;
+}
+
+// 隱藏 y 軸
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scrollbar-y-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.scrollbar-y-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.cursor-notallowed{
+  cursor: not-allowed !important;
+}
